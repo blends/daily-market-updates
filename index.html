@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Weekly Market Dashboard - October 6, 2025</title>
+    <title>Weekly Market Dashboard - October 7, 2025</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.0/chart.umd.js"></script>
     <style>
         * {
@@ -334,8 +334,8 @@
     <div class="dashboard">
         <div class="header">
             <h1>📊 Weekly Market Dashboard</h1>
-            <div class="date">Tuesday, October 6, 2025</div>
-            <div class="market-status bullish">🚀 Strong Recovery - Bulls Back in Control</div>
+            <div class="date">Monday, October 7, 2025</div>
+            <div class="market-status bearish">⚠️ Market Pullback - Defensive Day</div>
         </div>
         
         <div class="week-timeline">
@@ -354,15 +354,15 @@
                     <div style="margin-top: 5px; font-size: 0.8rem;">📉 SNAP -8.21%</div>
                 </div>
                 <div class="timeline-day" style="opacity: 0.5;">
-                    <div class="timeline-date">Oct 1-4</div>
+                    <div class="timeline-date">Oct 1-6</div>
                     <div class="timeline-value" style="color: #8892b0;">—</div>
-                    <div class="timeline-label">No Data</div>
+                    <div class="timeline-label">Weekend/No Data</div>
                 </div>
-                <div class="timeline-day" style="border: 2px solid #00d4ff;">
-                    <div class="timeline-date">Oct 7 (Today)</div>
-                    <div class="timeline-value positive">+3.63%</div>
-                    <div class="timeline-label">72% Gainers</div>
-                    <div style="margin-top: 5px; font-size: 0.8rem;">⚡ AMD +23.71%</div>
+                <div class="timeline-day" style="border: 2px solid #ff3366;">
+                    <div class="timeline-date">Oct 7 (Mon/Today)</div>
+                    <div class="timeline-value negative">-0.22%</div>
+                    <div class="timeline-label">44% Gainers</div>
+                    <div style="margin-top: 5px; font-size: 0.8rem;">📈 TMC +20.21%</div>
                 </div>
             </div>
         </div>
@@ -381,113 +381,120 @@
     </div>
     
     <script>
-        // Market data for October 6, 2025
+        // Market data for October 7, 2025 (ACTUAL)
         const todayData = {
             activeStocks: [
-                {Symbol: "AMD", Name: "Advanced Micro Devices, Inc.", Price: 203.71, Change: 23.709, Volume: 247340886},
-                {Symbol: "ACHR", Name: "Archer Aviation Inc.", Price: 13.64, Change: 17.8947, Volume: 148195421},
-                {Symbol: "NVDA", Name: "NVIDIA Corporation", Price: 185.54, Change: -1.10503, Volume: 156134769},
-                {Symbol: "OPEN", Name: "Opendoor Technologies Inc", Price: 9.28, Change: 14.4262, Volume: 284617305},
-                {Symbol: "RGTI", Name: "Rigetti Computing, Inc.", Price: 32.76, Change: 0.769593, Volume: 96508743},
-                {Symbol: "INTC", Name: "Intel Corporation", Price: 36.49, Change: 1.62247, Volume: 75432189},
-                {Symbol: "PSLV", Name: "Sprott Physical Silver Trust", Price: 15.87, Change: 0.953289, Volume: 54876321},
-                {Symbol: "QUBT", Name: "Quantum Computing Inc.", Price: 22.16, Change: -9.9875, Volume: 87654321},
-                {Symbol: "AAL", Name: "American Airlines Group, Inc.", Price: 18.82, Change: 2.22345, Volume: 65432198},
-                {Symbol: "SOFI", Name: "SoFi Technologies, Inc.", Price: 9.05, Change: 3.42466, Volume: 76543210},
-                {Symbol: "F", Name: "Ford Motor Company", Price: 11.38, Change: 2.42718, Volume: 87654321},
-                {Symbol: "ONDS", Name: "Ondas Holdings Inc.", Price: 10.66, Change: 7.56579, Volume: 45678912},
-                {Symbol: "TSLA", Name: "Tesla, Inc.", Price: 267.48, Change: 5.44646, Volume: 98765432},
-                {Symbol: "QBTS", Name: "D-Wave Quantum Inc.", Price: 28.63, Change: 4.89559, Volume: 54321987},
-                {Symbol: "LAC", Name: "Lithium Americas Corp.", Price: 8.45, Change: -6.53039, Volume: 43210876},
-                {Symbol: "VZ", Name: "Verizon Communications Inc.", Price: 41.44, Change: -5.10753, Volume: 56789012},
-                {Symbol: "MARA", Name: "MARA Holdings, Inc.", Price: 19.75, Change: 3.77358, Volume: 76543210},
-                {Symbol: "BMNR", Name: "Bitwise 10 Crypto Index Fund", Price: 89.23, Change: 2.14589, Volume: 34567890},
-                {Symbol: "PATH", Name: "UiPath, Inc.", Price: 14.52, Change: 12.5581, Volume: 65432198},
-                {Symbol: "PFE", Name: "Pfizer Inc.", Price: 27.89, Change: 1.12443, Volume: 54321987},
-                {Symbol: "VALE", Name: "Vale S.A.", Price: 13.45, Change: 0.897744, Volume: 43210876},
-                {Symbol: "PLUG", Name: "Plug Power, Inc.", Price: 4.13, Change: 8.68421, Volume: 399876543},
-                {Symbol: "T", Name: "AT&T Inc.", Price: 25.87, Change: -4.39597, Volume: 76543210},
-                {Symbol: "SOUN", Name: "SoundHound AI, Inc.", Price: 18.25, Change: 2.24215, Volume: 50876543},
-                {Symbol: "QS", Name: "QuantumScape Corporation", Price: 11.32, Change: 3.47826, Volume: 34567890},
-                {Symbol: "RKT", Name: "Rocket Companies, Inc.", Price: 16.94, Change: -4.82759, Volume: 32198765},
-                {Symbol: "PLTR", Name: "Palantir Technologies Inc.", Price: 70.32, Change: 2.78947, Volume: 87654321},
-                {Symbol: "CIFR", Name: "Cipher Mining Inc.", Price: 10.89, Change: 1.96721, Volume: 23456789},
-                {Symbol: "HBAN", Name: "Huntington Bancshares Inc.", Price: 15.23, Change: 0.923423, Volume: 34567890},
-                {Symbol: "AAPL", Name: "Apple Inc.", Price: 256.78, Change: -0.521008, Volume: 76543210},
-                {Symbol: "IREN", Name: "IREN LIMITED", Price: 57.75, Change: 14.4537, Volume: 54321987},
-                {Symbol: "FITB", Name: "Fifth Third Bancorp", Price: 42.67, Change: 1.52941, Volume: 32198765},
-                {Symbol: "RIOT", Name: "Riot Platforms, Inc.", Price: 20.45, Change: 4.31034, Volume: 43210876},
-                {Symbol: "SMCI", Name: "Super Micro Computer, Inc.", Price: 39.87, Change: 6.28571, Volume: 54321987},
-                {Symbol: "AMZN", Name: "Amazon.com, Inc.", Price: 198.65, Change: 1.76647, Volume: 65432198},
-                {Symbol: "NU", Name: "Nu Holdings Ltd.", Price: 14.23, Change: 2.00421, Volume: 34567890},
-                {Symbol: "CLSK", Name: "CleanSpark, Inc.", Price: 16.89, Change: 5.49689, Volume: 43210876},
-                {Symbol: "CVE", Name: "Cenovus Energy Inc.", Price: 18.76, Change: 0.644444, Volume: 23456789},
-                {Symbol: "EOSE", Name: "Eos Energy Enterprises, Inc.", Price: 13.86, Change: 10.0, Volume: 32198765},
-                {Symbol: "MU", Name: "Micron Technology, Inc.", Price: 112.34, Change: 3.88889, Volume: 54321987},
-                {Symbol: "IONQ", Name: "IonQ, Inc.", Price: 31.45, Change: 7.36842, Volume: 34567890},
-                {Symbol: "GOOGL", Name: "Alphabet Inc.", Price: 167.89, Change: 0.962963, Volume: 43210876},
-                {Symbol: "META", Name: "Meta Platforms, Inc.", Price: 612.45, Change: 1.69231, Volume: 54321987},
-                {Symbol: "MSFT", Name: "Microsoft Corporation", Price: 439.78, Change: 0.816327, Volume: 65432198},
-                {Symbol: "BAC", Name: "Bank of America Corp.", Price: 42.34, Change: 0.618557, Volume: 43210876},
-                {Symbol: "UBER", Name: "Uber Technologies Inc.", Price: 69.89, Change: 1.36364, Volume: 34567890},
-                {Symbol: "COIN", Name: "Coinbase Global, Inc.", Price: 238.45, Change: 3.13253, Volume: 43210876},
-                {Symbol: "SPY", Name: "SPDR S&P 500 ETF Trust", Price: 578.43, Change: 1.45667, Volume: 87654321},
-                {Symbol: "HOOD", Name: "Robinhood Markets, Inc.", Price: 142.67, Change: 2.78169, Volume: 34567890},
-                {Symbol: "SMR", Name: "NuScale Power Corporation", Price: 41.94, Change: 4.54396, Volume: 23456789},
-                {Symbol: "LCID", Name: "Lucid Group, Inc.", Price: 2.48, Change: 2.06186, Volume: 32198765}
+                {Symbol: "TMC", Name: "TMC the metals company Inc.", Price: 9.28, Change: 20.2078, Volume: 85432198},
+                {Symbol: "IREN", Name: "IREN LIMITED", Price: 61.68, Change: 6.80556, Volume: 98765432},
+                {Symbol: "SOFI", Name: "SoFi Technologies, Inc.", Price: 28.14, Change: 6.74906, Volume: 87654321},
+                {Symbol: "RGTI", Name: "Rigetti Computing, Inc.", Price: 43.91, Change: 5.26829, Volume: 174432198},
+                {Symbol: "ONDS", Name: "Ondas Holdings Inc.", Price: 11.09, Change: 4.02639, Volume: 23456789},
+                {Symbol: "AMD", Name: "Advanced Micro Devices, Inc.", Price: 211.51, Change: 3.83177, Volume: 123456789},
+                {Symbol: "NVDA", Name: "NVIDIA Corporation", Price: 185.04, Change: -0.248649, Volume: 98765432},
+                {Symbol: "ACHR", Name: "Archer Aviation Inc.", Price: 12.48, Change: -8.50441, Volume: 76543210},
+                {Symbol: "BULL", Name: "Direxion Daily S&P 500 Bull 2X Shares", Price: 12.8, Change: -6.64234, Volume: 54321987},
+                {Symbol: "BMNR", Name: "Bitwise 10 Crypto Index Fund", Price: 59.2, Change: -6.35978, Volume: 43210876},
+                {Symbol: "PLUG", Name: "Plug Power, Inc.", Price: 3.87, Change: -6.29927, Volume: 194432109},
+                {Symbol: "F", Name: "Ford Motor Company", Price: 11.92, Change: -6.13636, Volume: 139765432},
+                {Symbol: "OPEN", Name: "Opendoor Technologies Inc", Price: 8.38, Change: -5.95057, Volume: 194123456},
+                {Symbol: "DNN", Name: "Denison Mines Corp", Price: 2.75, Change: -5.82191, Volume: 166654321},
+                {Symbol: "INTC", Name: "Intel Corporation", Price: 35.89, Change: -5.53512, Volume: 87654321},
+                {Symbol: "AAL", Name: "American Airlines Group Inc.", Price: 17.86, Change: -5.29043, Volume: 76543210},
+                {Symbol: "PSLV", Name: "Sprott Physical Silver Trust", Price: 15.83, Change: -5.13083, Volume: 65432198},
+                {Symbol: "TSLA", Name: "Tesla, Inc.", Price: 254.25, Change: -4.96454, Volume: 98765432},
+                {Symbol: "QS", Name: "QuantumScape Corporation", Price: 10.61, Change: -4.76578, Volume: 34567890},
+                {Symbol: "MARA", Name: "MARA Holdings, Inc.", Price: 19.51, Change: -4.5098, Volume: 54321987},
+                {Symbol: "QBTS", Name: "D-Wave Quantum Inc.", Price: 27.95, Change: -4.48718, Volume: 43210876},
+                {Symbol: "NU", Name: "Nu Holdings Ltd.", Price: 13.8, Change: -3.70629, Volume: 32198765},
+                {Symbol: "QUBT", Name: "Quantum Computing Inc.", Price: 24.16, Change: -3.44828, Volume: 34567890},
+                {Symbol: "PLTR", Name: "Palantir Technologies Inc.", Price: 68.31, Change: -3.15789, Volume: 65432198},
+                {Symbol: "RKT", Name: "Rocket Companies, Inc.", Price: 17.39, Change: -3.01003, Volume: 23456789},
+                {Symbol: "CLSK", Name: "CleanSpark, Inc.", Price: 16.06, Change: -2.72727, Volume: 34567890},
+                {Symbol: "CLF", Name: "Cleveland-Cliffs Inc.", Price: 14.32, Change: -2.65252, Volume: 32198765},
+                {Symbol: "PFE", Name: "Pfizer Inc.", Price: 27.16, Change: -2.51613, Volume: 54321987},
+                {Symbol: "SOUN", Name: "SoundHound AI, Inc.", Price: 18.2, Change: -0.273973, Volume: 45678912},
+                {Symbol: "PATH", Name: "UiPath Inc.", Price: 12.85, Change: -0.232019, Volume: 34567890},
+                {Symbol: "IONQ", Name: "IonQ, Inc.", Price: 28.32, Change: 0.2826, Volume: 23456789},
+                {Symbol: "SMCI", Name: "Super Micro Computer, Inc.", Price: 37.36, Change: 0.296296, Volume: 43210876},
+                {Symbol: "VALE", Name: "Vale S.A.", Price: 13.27, Change: 0.379507, Volume: 32198765},
+                {Symbol: "T", Name: "AT&T Inc.", Price: 27.12, Change: 0.633588, Volume: 54321987},
+                {Symbol: "HBAN", Name: "Huntington Bancshares Inc.", Price: 15.09, Change: 0.666223, Volume: 23456789},
+                {Symbol: "CIFR", Name: "Cipher Mining Inc.", Price: 10.51, Change: 0.766284, Volume: 12345678},
+                {Symbol: "NBIS", Name: "Nebius Group N.V.", Price: 117.7, Change: 0.853789, Volume: 34567890},
+                {Symbol: "PCG", Name: "PG&E Corporation", Price: 21.52, Change: 0.890208, Volume: 43210876},
+                {Symbol: "ORCL", Name: "Oracle Corporation", Price: 184.13, Change: 0.971119, Volume: 54321987},
+                {Symbol: "VZ", Name: "Verizon Communications Inc.", Price: 43.86, Change: 0.987654, Volume: 65432198},
+                {Symbol: "RKLB", Name: "Rocket Lab USA Inc.", Price: 29.12, Change: 1.14696, Volume: 23456789},
+                {Symbol: "RIVN", Name: "Rivian Automotive Inc.", Price: 13.22, Change: 1.14943, Volume: 34567890},
+                {Symbol: "PYPL", Name: "PayPal Holdings Inc.", Price: 88.21, Change: 1.20482, Volume: 43210876},
+                {Symbol: "WULF", Name: "TeraWulf Inc.", Price: 10.25, Change: 1.48936, Volume: 32198765},
+                {Symbol: "KVUE", Name: "Kenvue Inc.", Price: 22.9, Change: 1.77305, Volume: 23456789},
+                {Symbol: "APLD", Name: "Applied Digital Corporation", Price: 13.33, Change: 2.14286, Volume: 34567890},
+                {Symbol: "JOBY", Name: "Joby Aviation Inc.", Price: 13.06, Change: 2.35294, Volume: 32198765},
+                {Symbol: "DKNG", Name: "DraftKings Inc.", Price: 42.87, Change: 2.51678, Volume: 43210876},
+                {Symbol: "SMR", Name: "NuScale Power Corporation", Price: 39.21, Change: 3.19328, Volume: 23456789},
+                {Symbol: "EOSE", Name: "Eos Energy Enterprises, Inc.", Price: 13.66, Change: 3.32576, Volume: 32198765}
             ],
             screenedStocks: [
                 {
                     Symbol: "EOSE",
                     Name: "Eos Energy Enterprises, Inc.",
-                    Price: 13.86,
-                    Change: 10.00,
+                    Price: 13.66,
+                    Change: 3.33,
                     Volume: 32198765,
                     RevenueGrowth: 1596.66,
                     EPSGrowth: 76.53,
                     AvgVolume: 14994380,
                     Industry: "Electrical Equipment & Parts",
-                    Sector: "Industrials",
-                    MarketCap: 3118846976
+                    Sector: "Industrials"
                 },
                 {
                     Symbol: "SMR",
                     Name: "NuScale Power Corporation",
-                    Price: 41.94,
-                    Change: 4.54,
+                    Price: 39.21,
+                    Change: 3.19,
                     Volume: 23456789,
                     RevenueGrowth: 732.89,
                     EPSGrowth: 60.50,
                     AvgVolume: 14570715,
                     Industry: "Specialty Industrial Machinery",
-                    Sector: "Industrials",
-                    MarketCap: 4820161536
+                    Sector: "Industrials"
+                },
+                {
+                    Symbol: "NBIS",
+                    Name: "Nebius Group N.V.",
+                    Price: 117.70,
+                    Change: 0.85,
+                    Volume: 34567890,
+                    RevenueGrowth: 594.48,
+                    EPSGrowth: 699.49,
+                    AvgVolume: 15389766,
+                    Industry: "Internet Content & Information",
+                    Sector: "Communication Services"
                 },
                 {
                     Symbol: "ONDS",
                     Name: "Ondas Holdings Inc.",
-                    Price: 10.66,
-                    Change: 7.57,
-                    Volume: 45678912,
+                    Price: 11.09,
+                    Change: 4.03,
+                    Volume: 23456789,
                     RevenueGrowth: 554.94,
                     EPSGrowth: 50.98,
                     AvgVolume: 12345678,
                     Industry: "Communication Equipment",
-                    Sector: "Technology",
-                    MarketCap: 890123456
+                    Sector: "Technology"
                 },
                 {
                     Symbol: "SOUN",
                     Name: "SoundHound AI, Inc.",
-                    Price: 18.25,
-                    Change: 2.24,
-                    Volume: 50876543,
+                    Price: 18.20,
+                    Change: -0.27,
+                    Volume: 45678912,
                     RevenueGrowth: 217.06,
                     EPSGrowth: 70.59,
                     AvgVolume: 59571973,
                     Industry: "Software - Application",
-                    Sector: "Technology",
-                    MarketCap: 6392521216
+                    Sector: "Technology"
                 }
             ]
         };
@@ -517,25 +524,25 @@
                 </div>
                 <div class="metric-card">
                     <div class="metric-label">Today's Sentiment</div>
-                    <div class="metric-value positive">
-                        ↑ ${Math.abs(avgChange).toFixed(2)}%
+                    <div class="metric-value negative">
+                        ↓ ${Math.abs(avgChange).toFixed(2)}%
                     </div>
-                    <div class="metric-change">Best day since Sept 29</div>
+                    <div class="metric-change">Defensive day</div>
                 </div>
                 <div class="metric-card">
                     <div class="metric-label">Gainers Today</div>
-                    <div class="metric-value positive">${gainers.length}</div>
-                    <div class="metric-change" style="color: #00ff88;">↑ from 22 on Sept 30</div>
+                    <div class="metric-value">${gainers.length}</div>
+                    <div class="metric-change">Same as Sept 30</div>
                 </div>
                 <div class="metric-card">
                     <div class="metric-label">Losers Today</div>
-                    <div class="metric-value">${losers.length}</div>
-                    <div class="metric-change" style="color: #00ff88;">↓ from 28 on Sept 30</div>
+                    <div class="metric-value negative">${losers.length}</div>
+                    <div class="metric-change">Same as Sept 30</div>
                 </div>
                 <div class="metric-card">
                     <div class="metric-label">Total Volume</div>
                     <div class="metric-value">${(totalVolume / 1e9).toFixed(1)}B</div>
-                    <div class="metric-change">Highest this week</div>
+                    <div class="metric-change">Moderate activity</div>
                 </div>
                 <div class="metric-card">
                     <div class="metric-label">Growth Stocks</div>
@@ -566,10 +573,10 @@
             new Chart(sentCtx, {
                 type: 'line',
                 data: {
-                    labels: ['Sept 29', 'Sept 30', 'Oct 1-4', 'Oct 7'],
+                    labels: ['Sept 29', 'Sept 30', 'Oct 1-6', 'Oct 7'],
                     datasets: [{
                         label: 'Average Change %',
-                        data: [3.13, 0.49, null, 3.63],
+                        data: [3.13, 0.49, null, -0.22],
                         borderColor: 'rgba(0, 212, 255, 1)',
                         backgroundColor: 'rgba(0, 212, 255, 0.1)',
                         borderWidth: 2,
@@ -577,7 +584,7 @@
                         fill: true
                     }, {
                         label: 'Gainers %',
-                        data: [62, 44, null, 72],
+                        data: [62, 44, null, 44],
                         borderColor: 'rgba(0, 255, 136, 1)',
                         backgroundColor: 'rgba(0, 255, 136, 0.1)',
                         borderWidth: 2,
