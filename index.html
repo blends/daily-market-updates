@@ -333,14 +333,21 @@
 <body>
     <div class="dashboard">
         <div class="header">
-            <h1>📊 Weekly Market Dashboard</h1>
-            <div class="date">Tuesday, October 7, 2025</div>
-            <div class="market-status bearish">⚠️ Market Pullback - Defensive Day</div>
+            <h1>📊 Monthly Market Dashboard</h1>
+            <div class="date">Friday, October 10, 2025</div>
+            <div style="font-size: 0.9rem; color: #8892b0; margin: 5px 0;">Latest market data from Tuesday, October 7</div>
+            <div class="market-status bearish">⚠️ Market Cooling - From Euphoria to Caution</div>
         </div>
         
         <div class="week-timeline">
-            <div class="timeline-title">📅 Weekly Market Evolution</div>
+            <div class="timeline-title">📅 Monthly Market Evolution (Sept 10 → Oct 7)</div>
             <div class="timeline-grid">
+                <div class="timeline-day" style="background: rgba(0, 255, 136, 0.1);">
+                    <div class="timeline-date">Sept 10 (Tue)</div>
+                    <div class="timeline-value positive">+4.25%</div>
+                    <div class="timeline-label">72% Gainers</div>
+                    <div style="margin-top: 5px; font-size: 0.8rem;">🚀 OPEN +79.52%</div>
+                </div>
                 <div class="timeline-day">
                     <div class="timeline-date">Sept 29 (Mon)</div>
                     <div class="timeline-value positive">+3.13%</div>
@@ -353,16 +360,12 @@
                     <div class="timeline-label">44% Gainers</div>
                     <div style="margin-top: 5px; font-size: 0.8rem;">📉 SNAP -8.21%</div>
                 </div>
-                <div class="timeline-day" style="opacity: 0.5;">
-                    <div class="timeline-date">Oct 1-6</div>
-                    <div class="timeline-value" style="color: #8892b0;">—</div>
-                    <div class="timeline-label">Weekend/No Data</div>
-                </div>
                 <div class="timeline-day" style="border: 2px solid #ff3366;">
-                    <div class="timeline-date">Oct 7 (Tue/Today)</div>
+                    <div class="timeline-date">Oct 7 (Tue)</div>
                     <div class="timeline-value negative">-0.22%</div>
                     <div class="timeline-label">44% Gainers</div>
                     <div style="margin-top: 5px; font-size: 0.8rem;">📈 TMC +20.21%</div>
+                    <div style="margin-top: 5px; font-size: 0.75rem; color: #8892b0;">Latest Data</div>
                 </div>
             </div>
         </div>
@@ -523,31 +526,31 @@
                     <div class="metric-change">Tracking all week</div>
                 </div>
                 <div class="metric-card">
-                    <div class="metric-label">Today's Sentiment</div>
+                    <div class="metric-label">Oct 7 Sentiment</div>
                     <div class="metric-value negative">
                         ↓ ${Math.abs(avgChange).toFixed(2)}%
                     </div>
-                    <div class="metric-change">Defensive day</div>
+                    <div class="metric-change">Down from +4.25% on Sept 10</div>
                 </div>
                 <div class="metric-card">
-                    <div class="metric-label">Gainers Today</div>
+                    <div class="metric-label">Oct 7 Gainers</div>
                     <div class="metric-value">${gainers.length}</div>
-                    <div class="metric-change">Same as Sept 30</div>
+                    <div class="metric-change" style="color: #ff3366;">↓ from 36 on Sept 10</div>
                 </div>
                 <div class="metric-card">
-                    <div class="metric-label">Losers Today</div>
+                    <div class="metric-label">Oct 7 Losers</div>
                     <div class="metric-value negative">${losers.length}</div>
-                    <div class="metric-change">Same as Sept 30</div>
+                    <div class="metric-change" style="color: #ff3366;">↑ from 14 on Sept 10</div>
                 </div>
                 <div class="metric-card">
-                    <div class="metric-label">Total Volume</div>
+                    <div class="metric-label">Oct 7 Volume</div>
                     <div class="metric-value">${(totalVolume / 1e9).toFixed(1)}B</div>
                     <div class="metric-change">Moderate activity</div>
                 </div>
                 <div class="metric-card">
                     <div class="metric-label">Growth Stocks</div>
                     <div class="metric-value">${todayData.screenedStocks.length}</div>
-                    <div class="metric-change" style="color: #00ff88;">↑ from 2 on Sept 29</div>
+                    <div class="metric-change" style="color: #00ff88;">Meeting all criteria</div>
                 </div>
             `;
             
@@ -557,26 +560,26 @@
         function renderCharts() {
             const chartsHTML = `
                 <div class="chart-container">
-                    <div class="chart-title">Weekly Market Sentiment</div>
+                    <div class="chart-title">Monthly Market Sentiment Trend</div>
                     <canvas id="sentimentChart"></canvas>
                 </div>
                 <div class="chart-container">
-                    <div class="chart-title">Top Sectors Today</div>
+                    <div class="chart-title">Oct 7 Volume Leaders by Performance</div>
                     <canvas id="sectorChart"></canvas>
                 </div>
             `;
             
             document.getElementById('chartsRow').innerHTML = chartsHTML;
             
-            // Weekly sentiment chart
+            // Monthly sentiment chart
             const sentCtx = document.getElementById('sentimentChart').getContext('2d');
             new Chart(sentCtx, {
                 type: 'line',
                 data: {
-                    labels: ['Sept 29', 'Sept 30', 'Oct 1-6', 'Oct 7'],
+                    labels: ['Sept 10', 'Sept 29', 'Sept 30', 'Oct 7'],
                     datasets: [{
                         label: 'Average Change %',
-                        data: [3.13, 0.49, null, -0.22],
+                        data: [4.25, 3.13, 0.49, -0.22],
                         borderColor: 'rgba(0, 212, 255, 1)',
                         backgroundColor: 'rgba(0, 212, 255, 0.1)',
                         borderWidth: 2,
@@ -584,7 +587,7 @@
                         fill: true
                     }, {
                         label: 'Gainers %',
-                        data: [62, 44, null, 44],
+                        data: [72, 62, 44, 44],
                         borderColor: 'rgba(0, 255, 136, 1)',
                         backgroundColor: 'rgba(0, 255, 136, 0.1)',
                         borderWidth: 2,
@@ -624,39 +627,25 @@
                 }
             });
             
-            // Sector performance chart
-            const techStocks = todayData.activeStocks.filter(s => 
-                ['AMD', 'NVDA', 'INTC', 'AAPL', 'MSFT', 'GOOGL', 'META', 'TSLA', 'PLTR', 'SOUN'].includes(s.Symbol)
-            );
-            const financialStocks = todayData.activeStocks.filter(s => 
-                ['BAC', 'COIN', 'HOOD', 'SOFI', 'RKT'].includes(s.Symbol)
-            );
-            const energyStocks = todayData.activeStocks.filter(s => 
-                ['PLUG', 'CVE', 'VALE'].includes(s.Symbol)
-            );
-            
-            const techAvg = techStocks.reduce((sum, s) => sum + s.Change, 0) / techStocks.length;
-            const finAvg = financialStocks.reduce((sum, s) => sum + s.Change, 0) / financialStocks.length;
-            const energyAvg = energyStocks.reduce((sum, s) => sum + s.Change, 0) / energyStocks.length;
+            // Volume leaders chart with performance overlay
+            const topByVolume = [...todayData.activeStocks]
+                .sort((a, b) => (b.Volume || 0) - (a.Volume || 0))
+                .slice(0, 8);
             
             const sectorCtx = document.getElementById('sectorChart').getContext('2d');
             new Chart(sectorCtx, {
                 type: 'bar',
                 data: {
-                    labels: ['Technology', 'Financial', 'Energy'],
+                    labels: topByVolume.map(s => s.Symbol),
                     datasets: [{
-                        label: 'Average Change %',
-                        data: [techAvg, finAvg, energyAvg],
-                        backgroundColor: [
-                            'rgba(0, 212, 255, 0.6)',
-                            'rgba(0, 255, 136, 0.6)',
-                            'rgba(255, 195, 0, 0.6)'
-                        ],
-                        borderColor: [
-                            'rgba(0, 212, 255, 1)',
-                            'rgba(0, 255, 136, 1)',
-                            'rgba(255, 195, 0, 1)'
-                        ],
+                        label: 'Volume (millions)',
+                        data: topByVolume.map(s => (s.Volume || 0) / 1e6),
+                        backgroundColor: topByVolume.map(s => 
+                            s.Change >= 0 ? 'rgba(0, 255, 136, 0.6)' : 'rgba(255, 51, 102, 0.6)'
+                        ),
+                        borderColor: topByVolume.map(s => 
+                            s.Change >= 0 ? 'rgba(0, 255, 136, 1)' : 'rgba(255, 51, 102, 1)'
+                        ),
                         borderWidth: 1
                     }]
                 },
@@ -666,6 +655,14 @@
                     plugins: {
                         legend: {
                             display: false
+                        },
+                        tooltip: {
+                            callbacks: {
+                                afterLabel: function(context) {
+                                    const stock = topByVolume[context.dataIndex];
+                                    return `Change: ${stock.Change >= 0 ? '+' : ''}${stock.Change.toFixed(2)}%`;
+                                }
+                            }
                         }
                     },
                     scales: {
@@ -677,7 +674,7 @@
                             ticks: {
                                 color: '#8892b0',
                                 callback: function(value) {
-                                    return value + '%';
+                                    return value + 'M';
                                 }
                             }
                         },
@@ -700,7 +697,7 @@
             const topLosers = [...validStocks].sort((a, b) => a.Change - b.Change).slice(0, 5);
             
             const html = `
-                <div class="table-title">🚀 Today's Top Movers (October 7)</div>
+                <div class="table-title">🚀 Top Movers (October 7 - Latest Data)</div>
                 <table>
                     <thead>
                         <tr>
@@ -745,7 +742,7 @@
                 .slice(0, 10);
             
             const html = `
-                <div class="table-title">📊 Volume Leaders Today</div>
+                <div class="table-title">📊 Volume Leaders (Oct 7) <span style="font-size: 0.9rem; color: #8892b0;">(Sept 10: OPEN had 1.0B volume!)</span></div>
                 <table>
                     <thead>
                         <tr>
@@ -758,18 +755,20 @@
                         </tr>
                     </thead>
                     <tbody>
-                        ${topByVolume.map((s, i) => `
+                        ${topByVolume.map((s, i) => {
+                            const openNote = s.Symbol === 'OPEN' ? ' (was 1,017M on Sept 10!)' : '';
+                            return `
                             <tr>
                                 <td>${i + 1}</td>
                                 <td><strong>${s.Symbol}</strong>${s.Volume > 300000000 ? '<span class="star-performer">HIGH</span>' : ''}</td>
                                 <td>${s.Name}</td>
-                                <td><span class="volume-bar">${(s.Volume / 1e6).toFixed(1)}M shares</span></td>
-                                <td>$${s.Price.toFixed(2)}</td>
+                                <td><span class="volume-bar">${(s.Volume / 1e6).toFixed(1)}M shares${openNote}</span></td>
+                                <td>${s.Price.toFixed(2)}</td>
                                 <td class="${s.Change >= 0 ? 'change-positive' : 'change-negative'}">
                                     ${s.Change >= 0 ? '+' : ''}${s.Change?.toFixed(2) || 'N/A'}%
                                 </td>
                             </tr>
-                        `).join('')}
+                        `}).join('')}
                     </tbody>
                 </table>
             `;
@@ -816,32 +815,32 @@
         }
         
         function renderWeeklyWinners() {
-            // Weekly performance highlights
-            const weeklyHighlights = [
-                {symbol: "AMD", name: "Advanced Micro Devices", weekChange: "+26.2%", note: "Semiconductor rally leader"},
-                {symbol: "PLUG", name: "Plug Power", weekChange: "+82.0%", note: "Highest volume today (400M)"},
-                {symbol: "OPEN", name: "Opendoor Tech", weekChange: "+13.2%", note: "Strong recovery from lows"},
-                {symbol: "SOUN", name: "SoundHound AI", weekChange: "+16.4%", note: "Consistent growth stock"},
-                {symbol: "EOSE", name: "Eos Energy", weekChange: "+24.0%", note: "Top revenue growth (1597%)"}
+            // Monthly performance highlights (Sept 10 → Oct 7)
+            const monthlyHighlights = [
+                {symbol: "AMD", name: "Advanced Micro Devices", monthChange: "+35.9%", note: "Absolute champion - best performer"},
+                {symbol: "SOUN", name: "SoundHound AI", monthChange: "+24.8%", note: "Consistent growth stock"},
+                {symbol: "AAPL", name: "Apple Inc.", monthChange: "+11.6%", note: "Steady tech giant gains"},
+                {symbol: "TSLA", name: "Tesla", monthChange: "-31.1%", note: "Biggest loser - brutal decline"},
+                {symbol: "OPEN", name: "Opendoor Tech", monthChange: "-20.3%", note: "From +79.5% hero to -20% zero"}
             ];
             
             const html = `
-                <div class="table-title">🏆 Weekly Winners & Highlights</div>
+                <div class="table-title">📊 27-Day Performance (Sept 10 → Oct 7)</div>
                 <table>
                     <thead>
                         <tr>
                             <th>Symbol</th>
                             <th>Company</th>
-                            <th>Week Performance</th>
-                            <th>Notable Achievement</th>
+                            <th>27-Day Return</th>
+                            <th>Notable Story</th>
                         </tr>
                     </thead>
                     <tbody>
-                        ${weeklyHighlights.map(stock => `
+                        ${monthlyHighlights.map(stock => `
                             <tr>
                                 <td><strong>${stock.symbol}</strong></td>
                                 <td>${stock.name}</td>
-                                <td class="change-positive">${stock.weekChange}</td>
+                                <td class="${stock.monthChange.startsWith('+') ? 'change-positive' : 'change-negative'}">${stock.monthChange}</td>
                                 <td>${stock.note}</td>
                             </tr>
                         `).join('')}
