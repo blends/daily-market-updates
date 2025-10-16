@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Weekly Market Dashboard - October 7, 2025</title>
+    <title>Market Dashboard - October 15, 2025</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.0/chart.umd.js"></script>
     <style>
         * {
@@ -311,12 +311,16 @@
         
         @media (max-width: 1024px) {
             .timeline-grid {
-                grid-template-columns: 1fr;
+                grid-template-columns: repeat(2, 1fr);
             }
         }
         
         @media (max-width: 768px) {
             .charts-row {
+                grid-template-columns: 1fr;
+            }
+            
+            .timeline-grid {
                 grid-template-columns: 1fr;
             }
             
@@ -333,15 +337,15 @@
 <body>
     <div class="dashboard">
         <div class="header">
-            <h1>📊 Monthly Market Dashboard</h1>
-            <div class="date">Monday, October 13, 2025</div>
-            <div class="market-status" style="background: linear-gradient(135deg, #00ff88, #00d4ff); border: 2px solid #00ff88; color: #0a0e27; font-weight: bold;">
-                🚀 MASSIVE RALLY - Best Day This Month! +10.19%
+            <h1>📊 Market Dashboard</h1>
+            <div class="date">Wednesday, October 15, 2025</div>
+            <div class="market-status bullish">
+                📈 MODERATELY BULLISH - Steady Recovery +1.56%
             </div>
         </div>
         
         <div class="week-timeline">
-            <div class="timeline-title">📅 Monthly Market Evolution (Sept 10 → Oct 7)</div>
+            <div class="timeline-title">📅 Recent Market Evolution</div>
             <div class="timeline-grid">
                 <div class="timeline-day" style="background: rgba(0, 255, 136, 0.1);">
                     <div class="timeline-date">Sept 10 (Tue)</div>
@@ -354,12 +358,6 @@
                     <div class="timeline-value positive">+3.13%</div>
                     <div class="timeline-label">62% Gainers</div>
                     <div style="margin-top: 5px; font-size: 0.8rem;">🔥 TLRY +60.87%</div>
-                </div>
-                <div class="timeline-day">
-                    <div class="timeline-date">Sept 30 (Tue)</div>
-                    <div class="timeline-value" style="color: #ffa500;">+0.49%</div>
-                    <div class="timeline-label">44% Gainers</div>
-                    <div style="margin-top: 5px; font-size: 0.8rem;">📉 SNAP -8.21%</div>
                 </div>
                 <div class="timeline-day" style="border: 2px solid #ff3366;">
                     <div class="timeline-date">Oct 7 (Tue)</div>
@@ -374,497 +372,444 @@
                     <div style="margin-top: 5px; font-size: 0.8rem;">💀 VG -24.88%</div>
                 </div>
                 <div class="timeline-day" style="border: 3px solid #00ff88; background: rgba(0, 255, 136, 0.1);">
-                    <div class="timeline-date">Oct 13 (Mon/TODAY)</div>
+                    <div class="timeline-date">Oct 13 (Mon)</div>
                     <div class="timeline-value" style="color: #00ff88; font-size: 1.8rem;">+10.19%</div>
                     <div class="timeline-label" style="color: #00ff88;">92% Gainers!</div>
                     <div style="margin-top: 5px; font-size: 0.8rem;">🚀 CRML +55.41%</div>
                 </div>
+                <div class="timeline-day" style="border: 2px solid #00d4ff; background: rgba(0, 212, 255, 0.05);">
+                    <div class="timeline-date">Oct 15 (Wed/TODAY)</div>
+                    <div class="timeline-value" style="color: #00ff88;">+1.56%</div>
+                    <div class="timeline-label" style="color: #00d4ff;">64% Gainers</div>
+                    <div style="margin-top: 5px; font-size: 0.8rem;">🌟 NVTS +20.60%</div>
+                </div>
             </div>
         </div>
         
-        <div class="metrics-grid" id="metricsGrid"></div>
+        <div class="metrics-grid">
+            <div class="metric-card">
+                <div class="metric-label">Total Stocks</div>
+                <div class="metric-value">50</div>
+                <div class="metric-change">Actively tracked</div>
+            </div>
+            <div class="metric-card">
+                <div class="metric-label">Today's Sentiment</div>
+                <div class="metric-value positive">
+                    ↑ 1.56%
+                </div>
+                <div class="metric-change" style="color: #00ff88;">Moderately bullish 📈</div>
+            </div>
+            <div class="metric-card">
+                <div class="metric-label">Gainers Today</div>
+                <div class="metric-value positive">32</div>
+                <div class="metric-change" style="color: #00ff88;">64% - Solid majority</div>
+            </div>
+            <div class="metric-card">
+                <div class="metric-label">Losers Today</div>
+                <div class="metric-value">18</div>
+                <div class="metric-change">36% of portfolio</div>
+            </div>
+            <div class="metric-card">
+                <div class="metric-label">Total Volume</div>
+                <div class="metric-value">3.75B</div>
+                <div class="metric-change">Healthy trading activity</div>
+            </div>
+            <div class="metric-card">
+                <div class="metric-label">Growth Stocks</div>
+                <div class="metric-value positive">5</div>
+                <div class="metric-change" style="color: #00ff88;">High-potential opportunities</div>
+            </div>
+        </div>
         
-        <div class="charts-row" id="chartsRow"></div>
+        <div class="charts-row">
+            <div class="chart-container">
+                <div class="chart-title">Market Sentiment Trend</div>
+                <canvas id="sentimentChart"></canvas>
+            </div>
+            <div class="chart-container">
+                <div class="chart-title">Today's Volume Leaders Performance</div>
+                <canvas id="volumeChart"></canvas>
+            </div>
+        </div>
         
-        <div class="stocks-table" id="topMovers"></div>
+        <div class="stocks-table">
+            <div class="table-title">🚀 Today's Top Movers (October 15) <span style="font-size: 0.9rem; color: #00ff88;">Steady Recovery</span></div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Symbol</th>
+                        <th>Name</th>
+                        <th>Price</th>
+                        <th>Change</th>
+                        <th>Volume</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td colspan="5" style="font-weight: bold; color: #00ff88;">Top 5 Gainers</td></tr>
+                    <tr>
+                        <td><strong>NVTS</strong><span class="star-performer">TOP</span></td>
+                        <td>Navitas Semiconductor Corporation</td>
+                        <td>$4.76</td>
+                        <td class="change-positive">+20.60%</td>
+                        <td><span class="volume-bar">13.7M</span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>SMR</strong></td>
+                        <td>NuScale Power Corporation</td>
+                        <td>$53.43</td>
+                        <td class="change-positive">+16.68%</td>
+                        <td><span class="volume-bar">58.3M</span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>HIMS</strong></td>
+                        <td>Hims & Hers Health, Inc.</td>
+                        <td>$28.24</td>
+                        <td class="change-positive">+16.18%</td>
+                        <td><span class="volume-bar">27.2M</span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>RXRX</strong></td>
+                        <td>Recursion Pharmaceuticals, Inc.</td>
+                        <td>$6.79</td>
+                        <td class="change-positive">+15.28%</td>
+                        <td><span class="volume-bar">179.2M</span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>BITF</strong></td>
+                        <td>Bitfarms Ltd.</td>
+                        <td>$4.80</td>
+                        <td class="change-positive">+9.85%</td>
+                        <td><span class="volume-bar">80.4M</span></td>
+                    </tr>
+                    <tr><td colspan="5" style="font-weight: bold; color: #ff3366;">Top 5 Losers</td></tr>
+                    <tr>
+                        <td><strong>CRML</strong></td>
+                        <td>Critical Metals Corp.</td>
+                        <td>$17.65</td>
+                        <td class="change-negative">-24.19%</td>
+                        <td><span class="volume-bar">65.9M</span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>FHN</strong></td>
+                        <td>First Horizon Corporation</td>
+                        <td>$14.33</td>
+                        <td class="change-negative">-9.43%</td>
+                        <td><span class="volume-bar">17.0M</span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>ONDS</strong></td>
+                        <td>Ondas Holdings Inc.</td>
+                        <td>$9.88</td>
+                        <td class="change-negative">-8.65%</td>
+                        <td><span class="volume-bar">19.1M</span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>LAC</strong></td>
+                        <td>Lithium Americas Corp.</td>
+                        <td>$3.64</td>
+                        <td class="change-negative">-6.07%</td>
+                        <td><span class="volume-bar">15.8M</span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>PLUG</strong></td>
+                        <td>Plug Power, Inc.</td>
+                        <td>$3.85</td>
+                        <td class="change-negative">-4.94%</td>
+                        <td><span class="volume-bar">180.2M</span></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
         
-        <div class="stocks-table" id="volumeLeaders"></div>
+        <div class="stocks-table">
+            <div class="table-title">📊 Today's Volume Leaders <span style="font-size: 0.9rem; color: #00d4ff;">High Activity Stocks</span></div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Rank</th>
+                        <th>Symbol</th>
+                        <th>Name</th>
+                        <th>Volume</th>
+                        <th>Price</th>
+                        <th>Change</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td><strong>NVDA</strong><span class="star-performer">HIGH</span></td>
+                        <td>NVIDIA Corporation</td>
+                        <td><span class="volume-bar">212.1M shares</span></td>
+                        <td>$179.83</td>
+                        <td class="change-negative">-0.10%</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td><strong>PLUG</strong></td>
+                        <td>Plug Power, Inc.</td>
+                        <td><span class="volume-bar">180.2M shares</span></td>
+                        <td>$3.85</td>
+                        <td class="change-negative">-4.94%</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td><strong>RXRX</strong></td>
+                        <td>Recursion Pharmaceuticals, Inc.</td>
+                        <td><span class="volume-bar">179.2M shares</span></td>
+                        <td>$6.79</td>
+                        <td class="change-positive">+15.28%</td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td><strong>AMD</strong></td>
+                        <td>Advanced Micro Devices, Inc.</td>
+                        <td><span class="volume-bar">110.3M shares</span></td>
+                        <td>$215.04</td>
+                        <td class="change-positive">+1.58%</td>
+                    </tr>
+                    <tr>
+                        <td>5</td>
+                        <td><strong>AAPL</strong></td>
+                        <td>Apple Inc.</td>
+                        <td><span class="volume-bar">103.1M shares</span></td>
+                        <td>$260.83</td>
+                        <td class="change-positive">+2.67%</td>
+                    </tr>
+                    <tr>
+                        <td>6</td>
+                        <td><strong>INTC</strong></td>
+                        <td>Intel Corporation</td>
+                        <td><span class="volume-bar">96.3M shares</span></td>
+                        <td>$39.38</td>
+                        <td class="change-positive">+0.66%</td>
+                    </tr>
+                    <tr>
+                        <td>7</td>
+                        <td><strong>TSLA</strong></td>
+                        <td>Tesla, Inc.</td>
+                        <td><span class="volume-bar">91.7M shares</span></td>
+                        <td>$258.48</td>
+                        <td class="change-negative">-1.45%</td>
+                    </tr>
+                    <tr>
+                        <td>8</td>
+                        <td><strong>SOFI</strong></td>
+                        <td>SoFi Technologies, Inc.</td>
+                        <td><span class="volume-bar">82.3M shares</span></td>
+                        <td>$31.14</td>
+                        <td class="change-positive">+3.33%</td>
+                    </tr>
+                    <tr>
+                        <td>9</td>
+                        <td><strong>BITF</strong></td>
+                        <td>Bitfarms Ltd.</td>
+                        <td><span class="volume-bar">80.4M shares</span></td>
+                        <td>$4.80</td>
+                        <td class="change-positive">+9.85%</td>
+                    </tr>
+                    <tr>
+                        <td>10</td>
+                        <td><strong>RIVN</strong></td>
+                        <td>Rivian Automotive, Inc.</td>
+                        <td><span class="volume-bar">68.8M shares</span></td>
+                        <td>$13.87</td>
+                        <td class="change-positive">+3.82%</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
         
-        <div class="stocks-table" id="growthStocks"></div>
-        
-        <div class="stocks-table" id="weeklyWinners"></div>
+        <div class="stocks-table">
+            <div class="table-title">💎 High Growth Opportunities <span class="growth-badge">4/4 Criteria Met</span> <span style="font-size: 0.9rem; color: #00ff88;">Strong Performers</span></div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Symbol</th>
+                        <th>Name</th>
+                        <th>Sector</th>
+                        <th>Price</th>
+                        <th>Revenue Growth</th>
+                        <th>EPS Growth</th>
+                        <th>Today's Performance</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>EOSE</strong></td>
+                        <td>Eos Energy Enterprises, Inc.</td>
+                        <td><span class="sector-pill">Industrials</span></td>
+                        <td>$18.28</td>
+                        <td class="change-positive">1,597%</td>
+                        <td class="change-positive">77%</td>
+                        <td class="change-positive">+7.56%</td>
+                    </tr>
+                    <tr>
+                        <td><strong>SMR</strong></td>
+                        <td>NuScale Power Corporation</td>
+                        <td><span class="sector-pill">Industrials</span></td>
+                        <td>$53.43</td>
+                        <td class="change-positive">733%</td>
+                        <td class="change-positive">61%</td>
+                        <td class="change-positive">+16.68%</td>
+                    </tr>
+                    <tr>
+                        <td><strong>SOUN</strong></td>
+                        <td>SoundHound AI, Inc.</td>
+                        <td><span class="sector-pill">Technology</span></td>
+                        <td>$21.40</td>
+                        <td class="change-positive">217%</td>
+                        <td class="change-positive">71%</td>
+                        <td class="change-positive">+2.59%</td>
+                    </tr>
+                    <tr>
+                        <td><strong>ONDS</strong></td>
+                        <td>Ondas Holdings Inc.</td>
+                        <td><span class="sector-pill">Technology</span></td>
+                        <td>$9.88</td>
+                        <td class="change-positive">555%</td>
+                        <td class="change-positive">51%</td>
+                        <td class="change-negative">-8.65%</td>
+                    </tr>
+                    <tr>
+                        <td><strong>UAMY</strong></td>
+                        <td>United States Antimony Corp.</td>
+                        <td><span class="sector-pill">Basic Materials</span></td>
+                        <td>$15.22</td>
+                        <td class="change-positive">187%</td>
+                        <td class="change-positive">5,700%</td>
+                        <td class="change-positive">+4.82%</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
     </div>
     
     <script>
-        // Market data for October 13, 2025 (MONDAY - MASSIVE RALLY)
-        const todayData = {
-            activeStocks: [
-                {Symbol: "CRML", Name: "Critical Metals Corp.", Price: 23.28, Change: 55.4054, Volume: 98765432},
-                {Symbol: "UAMY", Name: "United States Antimony Corp.", Price: 16.71, Change: 36.8493, Volume: 76543210},
-                {Symbol: "BITF", Name: "Bitfarms Ltd.", Price: 5.39, Change: 28.3333, Volume: 151612345},
-                {Symbol: "RGTI", Name: "Rigetti Computing, Inc.", Price: 54.91, Change: 25.0227, Volume: 167012345},
-                {Symbol: "EOSE", Name: "Eos Energy Enterprises, Inc.", Price: 17.05, Change: 23.3699, Volume: 65432109},
-                {Symbol: "QBTS", Name: "D-Wave Quantum Inc.", Price: 30.83, Change: 21.1979, Volume: 87654321},
-                {Symbol: "MARA", Name: "MARA Holdings, Inc.", Price: 22.15, Change: 18.9516, Volume: 98765432},
-                {Symbol: "ONDS", Name: "Ondas Holdings Inc.", Price: 10.81, Change: 17.2461, Volume: 54321098},
-                {Symbol: "QUBT", Name: "Quantum Computing Inc.", Price: 21.89, Change: 15.136, Volume: 76543210},
-                {Symbol: "SMR", Name: "NuScale Power Corporation", Price: 45.02, Change: 14.7282, Volume: 65432109},
-                {Symbol: "PLUG", Name: "Plug Power Inc.", Price: 3.9, Change: 14.0351, Volume: 188312345},
-                {Symbol: "QS", Name: "QuantumScape Corporation", Price: 11.17, Change: 13.5163, Volume: 43210987},
-                {Symbol: "CLSK", Name: "CleanSpark, Inc.", Price: 17.29, Change: 12.8568, Volume: 54321098},
-                {Symbol: "SOFI", Name: "SoFi Technologies, Inc.", Price: 29.65, Change: 12.3524, Volume: 87654321},
-                {Symbol: "RIOT", Name: "Riot Platforms, Inc.", Price: 21.61, Change: 11.7981, Volume: 76543210},
-                {Symbol: "F", Name: "Ford Motor Company", Price: 12.77, Change: 10.9475, Volume: 109876543},
-                {Symbol: "SOUN", Name: "SoundHound AI, Inc.", Price: 19.14, Change: 10.2478, Volume: 65432109},
-                {Symbol: "NIO", Name: "NIO Inc.", Price: 7.36, Change: 9.68712, Volume: 87654321},
-                {Symbol: "ACHR", Name: "Archer Aviation Inc.", Price: 12.28, Change: 9.36037, Volume: 76543210},
-                {Symbol: "RIG", Name: "Transocean Ltd.", Price: 3.63, Change: 9.00901, Volume: 54321098},
-                {Symbol: "AAL", Name: "American Airlines Group Inc.", Price: 17.99, Change: 8.70251, Volume: 98765432},
-                {Symbol: "LCID", Name: "Lucid Group, Inc.", Price: 2.56, Change: 8.01688, Volume: 65432109},
-                {Symbol: "SMCI", Name: "Super Micro Computer, Inc.", Price: 38.87, Change: 7.37569, Volume: 76543210},
-                {Symbol: "TLRY", Name: "Tilray Brands, Inc.", Price: 2.1, Change: 7.14286, Volume: 87654321},
-                {Symbol: "RIVN", Name: "Rivian Automotive, Inc.", Price: 13.03, Change: 6.27552, Volume: 65432109},
-                {Symbol: "CCL", Name: "Carnival Corporation", Price: 27.02, Change: 6.05834, Volume: 54321098},
-                {Symbol: "BBAI", Name: "BigBear.ai Holdings, Inc.", Price: 7.64, Change: 5.81717, Volume: 209812345},
-                {Symbol: "PLTR", Name: "Palantir Technologies Inc.", Price: 68.34, Change: 5.7963, Volume: 87654321},
-                {Symbol: "WBD", Name: "Warner Bros. Discovery", Price: 13.55, Change: 5.28178, Volume: 43210987},
-                {Symbol: "TSLA", Name: "Tesla, Inc.", Price: 259.12, Change: 5.39589, Volume: 98765432},
-                {Symbol: "BAC", Name: "Bank of America Corp.", Price: 43.16, Change: 4.96116, Volume: 76543210},
-                {Symbol: "INTC", Name: "Intel Corporation", Price: 37.88, Change: 4.15015, Volume: 87654321},
-                {Symbol: "SPY", Name: "SPDR S&P 500 ETF Trust", Price: 586.95, Change: 4.00948, Volume: 109876543},
-                {Symbol: "NVDA", Name: "NVIDIA Corporation", Price: 188.32, Change: 2.8223, Volume: 151512345},
-                {Symbol: "AAPL", Name: "Apple Inc.", Price: 259.87, Change: 2.6215, Volume: 98765432},
-                {Symbol: "HBAN", Name: "Huntington Bancshares", Price: 15.51, Change: 2.58065, Volume: 43210987},
-                {Symbol: "NU", Name: "Nu Holdings Ltd.", Price: 14.04, Change: 2.33236, Volume: 54321098},
-                {Symbol: "META", Name: "Meta Platforms, Inc.", Price: 607.89, Change: 2.2767, Volume: 87654321},
-                {Symbol: "GOOGL", Name: "Alphabet Inc.", Price: 170.23, Change: 2.06775, Volume: 76543210},
-                {Symbol: "MSFT", Name: "Microsoft Corporation", Price: 439.89, Change: 1.93103, Volume: 98765432},
-                {Symbol: "COOP", Name: "Mr. Cooper Group Inc.", Price: 116.18, Change: 1.70503, Volume: 32109876},
-                {Symbol: "CMCSA", Name: "Comcast Corporation", Price: 38.99, Change: 1.48425, Volume: 43210987},
-                {Symbol: "PSLV", Name: "Sprott Physical Silver Trust", Price: 16.14, Change: 1.44578, Volume: 65432109},
-                {Symbol: "AMD", Name: "Advanced Micro Devices, Inc.", Price: 216.42, Change: 0.771605, Volume: 115632109},
-                {Symbol: "DNN", Name: "Denison Mines Corp", Price: 2.9, Change: 0.694444, Volume: 98765432},
-                {Symbol: "PATH", Name: "UiPath, Inc.", Price: 17.14, Change: 0.528169, Volume: 54321098},
-                {Symbol: "PFE", Name: "Pfizer, Inc.", Price: 24.73, Change: -0.201207, Volume: 65432109},
-                {Symbol: "T", Name: "AT&T Inc.", Price: 25.59, Change: -1.07843, Volume: 76543210},
-                {Symbol: "NOK", Name: "Nokia Corporation", Price: 5.25, Change: -1.31579, Volume: 54321098},
-                {Symbol: "OPEN", Name: "Opendoor Technologies Inc", Price: 7.27, Change: -3.9576, Volume: 87654321}
-            ],
-            screenedStocks: [
-                {
-                    Symbol: "EOSE",
-                    Name: "Eos Energy Enterprises, Inc.",
-                    Price: 17.05,
-                    Change: 23.37,
-                    Volume: 65432109,
-                    RevenueGrowth: 1596.66,
-                    EPSGrowth: 76.53,
-                    AvgVolume: 14994380,
-                    Industry: "Electrical Equipment & Parts",
-                    Sector: "Industrials"
-                },
-                {
-                    Symbol: "SMR",
-                    Name: "NuScale Power Corporation",
-                    Price: 45.02,
-                    Change: 14.73,
-                    Volume: 65432109,
-                    RevenueGrowth: 732.89,
-                    EPSGrowth: 60.50,
-                    AvgVolume: 14570715,
-                    Industry: "Specialty Industrial Machinery",
-                    Sector: "Industrials"
-                },
-                {
-                    Symbol: "ONDS",
-                    Name: "Ondas Holdings Inc.",
-                    Price: 10.81,
-                    Change: 17.25,
-                    Volume: 54321098,
-                    RevenueGrowth: 554.94,
-                    EPSGrowth: 50.98,
-                    AvgVolume: 12345678,
-                    Industry: "Communication Equipment",
-                    Sector: "Technology"
-                },
-                {
-                    Symbol: "SOUN",
-                    Name: "SoundHound AI, Inc.",
-                    Price: 19.14,
-                    Change: 10.25,
-                    Volume: 65432109,
-                    RevenueGrowth: 217.06,
-                    EPSGrowth: 70.59,
-                    AvgVolume: 59571973,
-                    Industry: "Software - Application",
-                    Sector: "Technology"
-                },
-                {
-                    Symbol: "UAMY",
-                    Name: "United States Antimony Corp.",
-                    Price: 16.71,
-                    Change: 36.85,
-                    Volume: 76543210,
-                    RevenueGrowth: 187.34,
-                    EPSGrowth: 5700.0,
-                    AvgVolume: 8765432,
-                    Industry: "Other Industrial Metals & Mining",
-                    Sector: "Basic Materials"
-                }
-            ]
-        };
-        
-        function renderDashboard() {
-            renderMetrics();
-            renderCharts();
-            renderTopMovers();
-            renderVolumeLeaders();
-            renderGrowthStocks();
-            renderWeeklyWinners();
-        }
-        
-        function renderMetrics() {
-            const activeStocks = todayData.activeStocks;
-            const validStocks = activeStocks.filter(s => s.Change != null && !isNaN(s.Change));
-            const gainers = validStocks.filter(s => s.Change > 0);
-            const losers = validStocks.filter(s => s.Change < 0);
-            const avgChange = 10.19; // Today's actual average
-            const totalVolume = 3.4e9; // Today's approximate volume
-            
-            const metricsHTML = `
-                <div class="metric-card">
-                    <div class="metric-label">Total Stocks</div>
-                    <div class="metric-value">${activeStocks.length}</div>
-                    <div class="metric-change">Tracking all week</div>
-                </div>
-                <div class="metric-card">
-                    <div class="metric-label">Today's Sentiment</div>
-                    <div class="metric-value" style="color: #00ff88; font-size: 2.5rem;">
-                        ↑ 10.19%
-                    </div>
-                    <div class="metric-change" style="color: #00ff88;">BEST day this month! 🚀</div>
-                </div>
-                <div class="metric-card">
-                    <div class="metric-label">Gainers Today</div>
-                    <div class="metric-value" style="color: #00ff88;">46</div>
-                    <div class="metric-change" style="color: #00ff88;">92%! Complete reversal!</div>
-                </div>
-                <div class="metric-card">
-                    <div class="metric-label">Losers Today</div>
-                    <div class="metric-value">4</div>
-                    <div class="metric-change" style="color: #00ff88;">Only 8% of stocks red</div>
-                </div>
-                <div class="metric-card">
-                    <div class="metric-label">Total Volume</div>
-                    <div class="metric-value">3.4B</div>
-                    <div class="metric-change">Massive buying volume!</div>
-                </div>
-                <div class="metric-card">
-                    <div class="metric-label">Growth Stocks</div>
-                    <div class="metric-value">${todayData.screenedStocks.length}</div>
-                    <div class="metric-change" style="color: #00ff88;">Meeting all criteria</div>
-                </div>
-            `;
-            
-            document.getElementById('metricsGrid').innerHTML = metricsHTML;
-        }
-        
-        function renderCharts() {
-            const chartsHTML = `
-                <div class="chart-container">
-                    <div class="chart-title">Monthly Market Sentiment Trend</div>
-                    <canvas id="sentimentChart"></canvas>
-                </div>
-                <div class="chart-container">
-                    <div class="chart-title">Monday's Rally - Volume Leaders by Performance</div>
-                    <canvas id="sectorChart"></canvas>
-                </div>
-            `;
-            
-            document.getElementById('chartsRow').innerHTML = chartsHTML;
-            
-            // Monthly sentiment chart
-            const sentCtx = document.getElementById('sentimentChart').getContext('2d');
-            new Chart(sentCtx, {
-                type: 'line',
-                data: {
-                    labels: ['Sept 10', 'Sept 29', 'Sept 30', 'Oct 7', 'Oct 10', 'Oct 13'],
-                    datasets: [{
-                        label: 'Average Change %',
-                        data: [4.25, 3.13, 0.49, -0.22, -4.46, 10.19],
-                        borderColor: 'rgba(0, 255, 136, 1)',
-                        backgroundColor: 'rgba(0, 255, 136, 0.1)',
-                        borderWidth: 3,
-                        tension: 0.4,
-                        fill: true
-                    }, {
-                        label: 'Gainers %',
-                        data: [72, 62, 44, 44, 16, 92],
-                        borderColor: 'rgba(0, 212, 255, 1)',
-                        backgroundColor: 'rgba(0, 212, 255, 0.1)',
-                        borderWidth: 2,
-                        tension: 0.4,
-                        fill: true
-                    }]
-                },
-                options: {
-                    responsive: true,
-                    maintainAspectRatio: false,
-                    scales: {
-                        y: {
-                            beginAtZero: true,
-                            grid: {
-                                color: 'rgba(255, 255, 255, 0.1)'
-                            },
-                            ticks: {
-                                color: '#8892b0'
-                            }
+        // Sentiment trend chart
+        const sentCtx = document.getElementById('sentimentChart').getContext('2d');
+        new Chart(sentCtx, {
+            type: 'line',
+            data: {
+                labels: ['Sept 10', 'Sept 29', 'Sept 30', 'Oct 7', 'Oct 10', 'Oct 13', 'Oct 15'],
+                datasets: [{
+                    label: 'Average Change %',
+                    data: [4.25, 3.13, 0.49, -0.22, -4.46, 10.19, 1.56],
+                    borderColor: 'rgba(0, 255, 136, 1)',
+                    backgroundColor: 'rgba(0, 255, 136, 0.1)',
+                    borderWidth: 3,
+                    tension: 0.4,
+                    fill: true
+                }, {
+                    label: 'Gainers %',
+                    data: [72, 62, 44, 44, 16, 92, 64],
+                    borderColor: 'rgba(0, 212, 255, 1)',
+                    backgroundColor: 'rgba(0, 212, 255, 0.1)',
+                    borderWidth: 2,
+                    tension: 0.4,
+                    fill: true
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        grid: {
+                            color: 'rgba(255, 255, 255, 0.1)'
                         },
-                        x: {
-                            grid: {
-                                display: false
-                            },
-                            ticks: {
-                                color: '#8892b0'
-                            }
+                        ticks: {
+                            color: '#8892b0'
                         }
                     },
-                    plugins: {
-                        legend: {
-                            labels: {
-                                color: '#8892b0'
-                            }
-                        }
-                    }
-                }
-            });
-            
-            // Volume leaders chart with performance overlay
-            const topByVolume = [...todayData.activeStocks]
-                .sort((a, b) => (b.Volume || 0) - (a.Volume || 0))
-                .slice(0, 8);
-            
-            const sectorCtx = document.getElementById('sectorChart').getContext('2d');
-            new Chart(sectorCtx, {
-                type: 'bar',
-                data: {
-                    labels: topByVolume.map(s => s.Symbol),
-                    datasets: [{
-                        label: 'Volume (millions)',
-                        data: topByVolume.map(s => (s.Volume || 0) / 1e6),
-                        backgroundColor: topByVolume.map(s => 
-                            s.Change >= 0 ? 'rgba(0, 255, 136, 0.6)' : 'rgba(255, 51, 102, 0.6)'
-                        ),
-                        borderColor: topByVolume.map(s => 
-                            s.Change >= 0 ? 'rgba(0, 255, 136, 1)' : 'rgba(255, 51, 102, 1)'
-                        ),
-                        borderWidth: 1
-                    }]
-                },
-                options: {
-                    responsive: true,
-                    maintainAspectRatio: false,
-                    plugins: {
-                        legend: {
+                    x: {
+                        grid: {
                             display: false
                         },
-                        tooltip: {
-                            callbacks: {
-                                afterLabel: function(context) {
-                                    const stock = topByVolume[context.dataIndex];
-                                    return `Change: ${stock.Change >= 0 ? '+' : ''}${stock.Change.toFixed(2)}%`;
-                                }
-                            }
+                        ticks: {
+                            color: '#8892b0'
                         }
-                    },
-                    scales: {
-                        y: {
-                            beginAtZero: true,
-                            grid: {
-                                color: 'rgba(255, 255, 255, 0.1)'
-                            },
-                            ticks: {
-                                color: '#8892b0',
-                                callback: function(value) {
-                                    return value + 'M';
-                                }
-                            }
-                        },
-                        x: {
-                            grid: {
-                                display: false
-                            },
-                            ticks: {
-                                color: '#8892b0'
-                            }
+                    }
+                },
+                plugins: {
+                    legend: {
+                        labels: {
+                            color: '#8892b0'
                         }
                     }
                 }
-            });
-        }
+            }
+        });
         
-        function renderTopMovers() {
-            const validStocks = todayData.activeStocks.filter(s => s.Change != null && !isNaN(s.Change));
-            const topGainers = [...validStocks].sort((a, b) => b.Change - a.Change).slice(0, 5);
-            const topLosers = [...validStocks].sort((a, b) => a.Change - b.Change).slice(0, 5);
-            
-            const html = `
-                <div class="table-title">🚀 Today's Top Movers (October 13) <span style="font-size: 0.9rem; color: #00ff88;">Rally Mode!</span></div>
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Symbol</th>
-                            <th>Name</th>
-                            <th>Price</th>
-                            <th>Change</th>
-                            <th>Volume</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr><td colspan="5" style="font-weight: bold; color: #00ff88;">Top Gainers (46 stocks green today!)</td></tr>
-                        ${topGainers.map((s, i) => `
-                            <tr>
-                                <td><strong>${s.Symbol}</strong>${i === 0 ? '<span class="star-performer">TOP</span>' : ''}</td>
-                                <td>${s.Name}</td>
-                                <td>$${s.Price.toFixed(2)}</td>
-                                <td class="change-positive">+${s.Change.toFixed(2)}%</td>
-                                <td><span class="volume-bar">${(s.Volume / 1e6).toFixed(1)}M</span></td>
-                            </tr>
-                        `).join('')}
-                        <tr><td colspan="5" style="font-weight: bold; color: #ff3366;">Only 4 Losers Today!</td></tr>
-                        ${topLosers.map(s => `
-                            <tr>
-                                <td><strong>${s.Symbol}</strong></td>
-                                <td>${s.Name}</td>
-                                <td>$${s.Price.toFixed(2)}</td>
-                                <td class="change-negative">${s.Change.toFixed(2)}%</td>
-                                <td><span class="volume-bar">${(s.Volume / 1e6).toFixed(1)}M</span></td>
-                            </tr>
-                        `).join('')}
-                    </tbody>
-                </table>
-            `;
-            
-            document.getElementById('topMovers').innerHTML = html;
-        }
+        // Volume leaders chart
+        const volumeData = [
+            {symbol: 'NVDA', volume: 212.1, change: -0.10},
+            {symbol: 'PLUG', volume: 180.2, change: -4.94},
+            {symbol: 'RXRX', volume: 179.2, change: 15.28},
+            {symbol: 'AMD', volume: 110.3, change: 1.58},
+            {symbol: 'AAPL', volume: 103.1, change: 2.67},
+            {symbol: 'INTC', volume: 96.3, change: 0.66},
+            {symbol: 'TSLA', volume: 91.7, change: -1.45},
+            {symbol: 'SOFI', volume: 82.3, change: 3.33}
+        ];
         
-        function renderVolumeLeaders() {
-            const topByVolume = [...todayData.activeStocks]
-                .sort((a, b) => (b.Volume || 0) - (a.Volume || 0))
-                .slice(0, 10);
-            
-            const html = `
-                <div class="table-title">📊 Today's Volume Leaders <span style="font-size: 0.9rem; color: #00ff88;">🚀 Buying frenzy!</span></div>
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Rank</th>
-                            <th>Symbol</th>
-                            <th>Name</th>
-                            <th>Volume</th>
-                            <th>Price</th>
-                            <th>Change</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        ${topByVolume.map((s, i) => {
-                            const openNote = s.Symbol === 'OPEN' ? ' (was 1,017M on Sept 10!)' : '';
-                            return `
-                            <tr>
-                                <td>${i + 1}</td>
-                                <td><strong>${s.Symbol}</strong>${s.Volume > 300000000 ? '<span class="star-performer">HIGH</span>' : ''}</td>
-                                <td>${s.Name}</td>
-                                <td><span class="volume-bar">${(s.Volume / 1e6).toFixed(1)}M shares${openNote}</span></td>
-                                <td>${s.Price.toFixed(2)}</td>
-                                <td class="${s.Change >= 0 ? 'change-positive' : 'change-negative'}">
-                                    ${s.Change >= 0 ? '+' : ''}${s.Change?.toFixed(2) || 'N/A'}%
-                                </td>
-                            </tr>
-                        `}).join('')}
-                    </tbody>
-                </table>
-            `;
-            
-            document.getElementById('volumeLeaders').innerHTML = html;
-        }
-        
-        function renderGrowthStocks() {
-            const screenedStocks = todayData.screenedStocks;
-            
-            const html = `
-                <div class="table-title">💎 High Growth Opportunities <span class="growth-badge">5/5 Criteria Met</span> <span style="font-size: 0.9rem; color: #00ff88;">All rallying! 🚀</span></div>
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Symbol</th>
-                            <th>Name</th>
-                            <th>Sector</th>
-                            <th>Price</th>
-                            <th>Revenue Growth</th>
-                            <th>EPS Growth</th>
-                            <th>Today's Performance</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        ${screenedStocks.map(s => `
-                            <tr>
-                                <td><strong>${s.Symbol}</strong></td>
-                                <td>${s.Name}</td>
-                                <td><span class="sector-pill">${s.Sector}</span></td>
-                                <td>$${s.Price.toFixed(2)}</td>
-                                <td class="change-positive">${s.RevenueGrowth.toFixed(0)}%</td>
-                                <td class="change-positive">${s.EPSGrowth.toFixed(0)}%</td>
-                                <td class="${s.Change >= 0 ? 'change-positive' : 'change-negative'}">
-                                    ${s.Change >= 0 ? '+' : ''}${s.Change.toFixed(2)}%
-                                </td>
-                            </tr>
-                        `).join('')}
-                    </tbody>
-                </table>
-            `;
-            
-            document.getElementById('growthStocks').innerHTML = html;
-        }
-        
-        function renderWeeklyWinners() {
-            // Monthly performance highlights (Sept 10 → Oct 13)
-            const monthlyHighlights = [
-                {symbol: "CRML", name: "Critical Metals", monthChange: "+55.4%", note: "TODAY'S STAR - massive rally leader!"},
-                {symbol: "AMD", name: "Advanced Micro Devices", monthChange: "+38.5%", note: "Still strong despite volatility"},
-                {symbol: "BITF", name: "Bitfarms", monthChange: "+28.3%", note: "Leading crypto miner rally"},
-                {symbol: "EOSE", name: "Eos Energy", monthChange: "+23.4%", note: "Growth stock champion (+1597% rev)"},
-                {symbol: "RGTI", name: "Rigetti Computing", monthChange: "+25.0%", note: "Quantum computing surge"}
-            ];
-            
-            const html = `
-                <div class="table-title">📊 Market Leaders & Today's Rally Stars</div>
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Symbol</th>
-                            <th>Company</th>
-                            <th>Performance</th>
-                            <th>Today's Story</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        ${monthlyHighlights.map(stock => `
-                            <tr>
-                                <td><strong>${stock.symbol}</strong></td>
-                                <td>${stock.name}</td>
-                                <td class="change-positive">${stock.monthChange}</td>
-                                <td>${stock.note}</td>
-                            </tr>
-                        `).join('')}
-                    </tbody>
-                </table>
-            `;
-            
-            document.getElementById('weeklyWinners').innerHTML = html;
-        }
-        
-        // Initialize dashboard
-        renderDashboard();
+        const volCtx = document.getElementById('volumeChart').getContext('2d');
+        new Chart(volCtx, {
+            type: 'bar',
+            data: {
+                labels: volumeData.map(s => s.symbol),
+                datasets: [{
+                    label: 'Volume (millions)',
+                    data: volumeData.map(s => s.volume),
+                    backgroundColor: volumeData.map(s => 
+                        s.change >= 0 ? 'rgba(0, 255, 136, 0.6)' : 'rgba(255, 51, 102, 0.6)'
+                    ),
+                    borderColor: volumeData.map(s => 
+                        s.change >= 0 ? 'rgba(0, 255, 136, 1)' : 'rgba(255, 51, 102, 1)'
+                    ),
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        display: false
+                    },
+                    tooltip: {
+                        callbacks: {
+                            afterLabel: function(context) {
+                                const stock = volumeData[context.dataIndex];
+                                return `Change: ${stock.change >= 0 ? '+' : ''}${stock.change.toFixed(2)}%`;
+                            }
+                        }
+                    }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        grid: {
+                            color: 'rgba(255, 255, 255, 0.1)'
+                        },
+                        ticks: {
+                            color: '#8892b0',
+                            callback: function(value) {
+                                return value + 'M';
+                            }
+                        }
+                    },
+                    x: {
+                        grid: {
+                            display: false
+                        },
+                        ticks: {
+                            color: '#8892b0'
+                        }
+                    }
+                }
+            }
+        });
     </script>
 </body>
 </html>
