@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Market Dashboard - October 15, 2025</title>
+    <title>Market Dashboard - October 29, 2025</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.0/chart.umd.js"></script>
     <style>
         * {
@@ -64,10 +64,10 @@
             animation: pulse 2s infinite;
         }
         
-        .market-status.bullish {
-            background: rgba(0, 255, 136, 0.2);
-            border: 1px solid #00ff88;
-            color: #00ff88;
+        .market-status.mixed {
+            background: rgba(255, 165, 0, 0.2);
+            border: 1px solid #ffa500;
+            color: #ffa500;
         }
         
         @keyframes pulse {
@@ -338,9 +338,9 @@
     <div class="dashboard">
         <div class="header">
             <h1>📊 Market Dashboard</h1>
-            <div class="date">Wednesday, October 15, 2025</div>
-            <div class="market-status bullish">
-                📈 MODERATELY BULLISH - Steady Recovery +1.56%
+            <div class="date">Wednesday, October 29, 2025</div>
+            <div class="market-status mixed">
+                📊 MIXED - Slight Decline -0.82%
             </div>
         </div>
         
@@ -377,11 +377,17 @@
                     <div class="timeline-label" style="color: #00ff88;">92% Gainers!</div>
                     <div style="margin-top: 5px; font-size: 0.8rem;">🚀 CRML +55.41%</div>
                 </div>
-                <div class="timeline-day" style="border: 2px solid #00d4ff; background: rgba(0, 212, 255, 0.05);">
-                    <div class="timeline-date">Oct 15 (Wed/TODAY)</div>
+                <div class="timeline-day">
+                    <div class="timeline-date">Oct 15 (Wed)</div>
                     <div class="timeline-value" style="color: #00ff88;">+1.56%</div>
                     <div class="timeline-label" style="color: #00d4ff;">64% Gainers</div>
                     <div style="margin-top: 5px; font-size: 0.8rem;">🌟 NVTS +20.60%</div>
+                </div>
+                <div class="timeline-day" style="border: 2px solid #ffa500; background: rgba(255, 165, 0, 0.05);">
+                    <div class="timeline-date">Oct 29 (Wed/TODAY)</div>
+                    <div class="timeline-value" style="color: #ff9933;">-0.82%</div>
+                    <div class="timeline-label" style="color: #ffa500;">54% Gainers</div>
+                    <div style="margin-top: 5px; font-size: 0.8rem;">🌟 NGD +10.58%</div>
                 </div>
             </div>
         </div>
@@ -394,29 +400,29 @@
             </div>
             <div class="metric-card">
                 <div class="metric-label">Today's Sentiment</div>
-                <div class="metric-value positive">
-                    ↑ 1.56%
+                <div class="metric-value negative">
+                    ↓ 0.82%
                 </div>
-                <div class="metric-change" style="color: #00ff88;">Moderately bullish 📈</div>
+                <div class="metric-change" style="color: #ffa500;">Mixed signals ⚖️</div>
             </div>
             <div class="metric-card">
                 <div class="metric-label">Gainers Today</div>
-                <div class="metric-value positive">32</div>
-                <div class="metric-change" style="color: #00ff88;">64% - Solid majority</div>
+                <div class="metric-value positive">27</div>
+                <div class="metric-change" style="color: #00ff88;">54% - Slight majority</div>
             </div>
             <div class="metric-card">
                 <div class="metric-label">Losers Today</div>
-                <div class="metric-value">18</div>
-                <div class="metric-change">36% of portfolio</div>
+                <div class="metric-value">22</div>
+                <div class="metric-change">44% of portfolio</div>
             </div>
             <div class="metric-card">
                 <div class="metric-label">Total Volume</div>
-                <div class="metric-value">3.75B</div>
-                <div class="metric-change">Healthy trading activity</div>
+                <div class="metric-value">3.43B</div>
+                <div class="metric-change">Strong trading activity</div>
             </div>
             <div class="metric-card">
                 <div class="metric-label">Growth Stocks</div>
-                <div class="metric-value positive">5</div>
+                <div class="metric-value positive">4</div>
                 <div class="metric-change" style="color: #00ff88;">High-potential opportunities</div>
             </div>
         </div>
@@ -433,7 +439,7 @@
         </div>
         
         <div class="stocks-table">
-            <div class="table-title">🚀 Today's Top Movers (October 15) <span style="font-size: 0.9rem; color: #00ff88;">Steady Recovery</span></div>
+            <div class="table-title">🚀 Today's Top Movers (October 29) <span style="font-size: 0.9rem; color: #ffa500;">Mixed Session</span></div>
             <table>
                 <thead>
                     <tr>
@@ -445,77 +451,147 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr><td colspan="5" style="font-weight: bold; color: #00ff88;">Top 5 Gainers</td></tr>
+                    <tr><td colspan="5" style="font-weight: bold; color: #00ff88;">Top 10 Gainers</td></tr>
                     <tr>
-                        <td><strong>NVTS</strong><span class="star-performer">TOP</span></td>
-                        <td>Navitas Semiconductor Corporation</td>
-                        <td>$4.76</td>
-                        <td class="change-positive">+20.60%</td>
-                        <td><span class="volume-bar">13.7M</span></td>
+                        <td><strong>NGD</strong><span class="star-performer">TOP</span></td>
+                        <td>New Gold Inc.</td>
+                        <td>$7.00</td>
+                        <td class="change-positive">+10.58%</td>
+                        <td><span class="volume-bar">40.0M</span></td>
                     </tr>
                     <tr>
-                        <td><strong>SMR</strong></td>
-                        <td>NuScale Power Corporation</td>
-                        <td>$53.43</td>
-                        <td class="change-positive">+16.68%</td>
-                        <td><span class="volume-bar">58.3M</span></td>
+                        <td><strong>LUMN</strong></td>
+                        <td>Lumen Technologies, Inc.</td>
+                        <td>$11.00</td>
+                        <td class="change-positive">+9.45%</td>
+                        <td><span class="volume-bar">58.7M</span></td>
                     </tr>
                     <tr>
-                        <td><strong>HIMS</strong></td>
-                        <td>Hims & Hers Health, Inc.</td>
-                        <td>$28.24</td>
-                        <td class="change-positive">+16.18%</td>
-                        <td><span class="volume-bar">27.2M</span></td>
+                        <td><strong>JOBY</strong></td>
+                        <td>Joby Aviation, Inc.</td>
+                        <td>$17.03</td>
+                        <td class="change-positive">+9.10%</td>
+                        <td><span class="volume-bar">54.2M</span></td>
                     </tr>
                     <tr>
-                        <td><strong>RXRX</strong></td>
-                        <td>Recursion Pharmaceuticals, Inc.</td>
-                        <td>$6.79</td>
-                        <td class="change-positive">+15.28%</td>
-                        <td><span class="volume-bar">179.2M</span></td>
+                        <td><strong>QBTS</strong></td>
+                        <td>D-Wave Quantum Inc.</td>
+                        <td>$34.26</td>
+                        <td class="change-positive">+7.06%</td>
+                        <td><span class="volume-bar">47.0M</span></td>
                     </tr>
                     <tr>
-                        <td><strong>BITF</strong></td>
-                        <td>Bitfarms Ltd.</td>
-                        <td>$4.80</td>
-                        <td class="change-positive">+9.85%</td>
-                        <td><span class="volume-bar">80.4M</span></td>
-                    </tr>
-                    <tr><td colspan="5" style="font-weight: bold; color: #ff3366;">Top 5 Losers</td></tr>
-                    <tr>
-                        <td><strong>CRML</strong></td>
-                        <td>Critical Metals Corp.</td>
-                        <td>$17.65</td>
-                        <td class="change-negative">-24.19%</td>
-                        <td><span class="volume-bar">65.9M</span></td>
+                        <td><strong>RGTI</strong></td>
+                        <td>Rigetti Computing, Inc.</td>
+                        <td>$39.41</td>
+                        <td class="change-positive">+6.31%</td>
+                        <td><span class="volume-bar">63.0M</span></td>
                     </tr>
                     <tr>
-                        <td><strong>FHN</strong></td>
-                        <td>First Horizon Corporation</td>
-                        <td>$14.33</td>
-                        <td class="change-negative">-9.43%</td>
-                        <td><span class="volume-bar">17.0M</span></td>
+                        <td><strong>PLTR</strong></td>
+                        <td>Palantir Technologies Inc.</td>
+                        <td>$198.81</td>
+                        <td class="change-positive">+4.86%</td>
+                        <td><span class="volume-bar">62.9M</span></td>
                     </tr>
                     <tr>
-                        <td><strong>ONDS</strong></td>
-                        <td>Ondas Holdings Inc.</td>
-                        <td>$9.88</td>
-                        <td class="change-negative">-8.65%</td>
-                        <td><span class="volume-bar">19.1M</span></td>
+                        <td><strong>QUBT</strong></td>
+                        <td>Quantum Computing Inc.</td>
+                        <td>$15.52</td>
+                        <td class="change-positive">+4.09%</td>
+                        <td><span class="volume-bar">36.6M</span></td>
                     </tr>
                     <tr>
-                        <td><strong>LAC</strong></td>
-                        <td>Lithium Americas Corp.</td>
-                        <td>$3.64</td>
-                        <td class="change-negative">-6.07%</td>
-                        <td><span class="volume-bar">15.8M</span></td>
+                        <td><strong>GGB</strong></td>
+                        <td>Gerdau S.A.</td>
+                        <td>$3.60</td>
+                        <td class="change-positive">+4.05%</td>
+                        <td><span class="volume-bar">36.4M</span></td>
                     </tr>
                     <tr>
-                        <td><strong>PLUG</strong></td>
-                        <td>Plug Power, Inc.</td>
-                        <td>$3.85</td>
-                        <td class="change-negative">-4.94%</td>
-                        <td><span class="volume-bar">180.2M</span></td>
+                        <td><strong>BBD</strong></td>
+                        <td>Banco Bradesco Sa</td>
+                        <td>$3.52</td>
+                        <td class="change-positive">+3.83%</td>
+                        <td><span class="volume-bar">79.5M</span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>DNN</strong></td>
+                        <td>Denison Mines Corp</td>
+                        <td>$3.17</td>
+                        <td class="change-positive">+3.26%</td>
+                        <td><span class="volume-bar">119.1M</span></td>
+                    </tr>
+                    <tr><td colspan="5" style="font-weight: bold; color: #ff3366;">Top 10 Losers</td></tr>
+                    <tr>
+                        <td><strong>FI</strong><span style="background: #ff0000; color: white; padding: 2px 6px; border-radius: 4px; font-size: 0.75rem; font-weight: bold; margin-left: 5px;">CRASH</span></td>
+                        <td>Fiserv, Inc.</td>
+                        <td>$70.60</td>
+                        <td class="change-negative">-44.04%</td>
+                        <td><span class="volume-bar">100.9M</span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>AVTR</strong></td>
+                        <td>Avantor, Inc.</td>
+                        <td>$11.58</td>
+                        <td class="change-negative">-23.21%</td>
+                        <td><span class="volume-bar">35.6M</span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>WULF</strong></td>
+                        <td>TeraWulf Inc.</td>
+                        <td>$14.50</td>
+                        <td class="change-negative">-9.03%</td>
+                        <td><span class="volume-bar">79.8M</span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>RKT</strong></td>
+                        <td>Rocket Companies, Inc.</td>
+                        <td>$16.24</td>
+                        <td class="change-negative">-7.25%</td>
+                        <td><span class="volume-bar">50.2M</span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>NOK</strong></td>
+                        <td>Nokia Corporation Sponsored</td>
+                        <td>$7.33</td>
+                        <td class="change-negative">-5.66%</td>
+                        <td><span class="volume-bar">178.8M</span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>PYPL</strong></td>
+                        <td>PayPal Holdings, Inc.</td>
+                        <td>$69.68</td>
+                        <td class="change-negative">-4.57%</td>
+                        <td><span class="volume-bar">37.2M</span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>KHC</strong></td>
+                        <td>The Kraft Heinz Company</td>
+                        <td>$24.38</td>
+                        <td class="change-negative">-4.47%</td>
+                        <td><span class="volume-bar">44.7M</span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>AMCR</strong></td>
+                        <td>Amcor plc</td>
+                        <td>$8.00</td>
+                        <td class="change-negative">-4.19%</td>
+                        <td><span class="volume-bar">39.3M</span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>OPEN</strong></td>
+                        <td>Opendoor Technologies Inc</td>
+                        <td>$7.65</td>
+                        <td class="change-negative">-4.02%</td>
+                        <td><span class="volume-bar">93.4M</span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>BTG</strong></td>
+                        <td>B2Gold Corp</td>
+                        <td>$4.77</td>
+                        <td class="change-negative">-2.65%</td>
+                        <td><span class="volume-bar">55.5M</span></td>
                     </tr>
                 </tbody>
             </table>
@@ -539,88 +615,88 @@
                         <td>1</td>
                         <td><strong>NVDA</strong><span class="star-performer">HIGH</span></td>
                         <td>NVIDIA Corporation</td>
-                        <td><span class="volume-bar">212.1M shares</span></td>
-                        <td>$179.83</td>
-                        <td class="change-negative">-0.10%</td>
+                        <td><span class="volume-bar">303.6M shares</span></td>
+                        <td>$207.04</td>
+                        <td class="change-positive">+2.99%</td>
                     </tr>
                     <tr>
                         <td>2</td>
-                        <td><strong>PLUG</strong></td>
-                        <td>Plug Power, Inc.</td>
-                        <td><span class="volume-bar">180.2M shares</span></td>
-                        <td>$3.85</td>
-                        <td class="change-negative">-4.94%</td>
+                        <td><strong>NOK</strong></td>
+                        <td>Nokia Corporation Sponsored</td>
+                        <td><span class="volume-bar">178.8M shares</span></td>
+                        <td>$7.33</td>
+                        <td class="change-negative">-5.66%</td>
                     </tr>
                     <tr>
                         <td>3</td>
-                        <td><strong>RXRX</strong></td>
-                        <td>Recursion Pharmaceuticals, Inc.</td>
-                        <td><span class="volume-bar">179.2M shares</span></td>
-                        <td>$6.79</td>
-                        <td class="change-positive">+15.28%</td>
+                        <td><strong>PLUG</strong></td>
+                        <td>Plug Power, Inc.</td>
+                        <td><span class="volume-bar">130.3M shares</span></td>
+                        <td>$2.76</td>
+                        <td class="change-negative">-1.08%</td>
                     </tr>
                     <tr>
                         <td>4</td>
-                        <td><strong>AMD</strong></td>
-                        <td>Advanced Micro Devices, Inc.</td>
-                        <td><span class="volume-bar">110.3M shares</span></td>
-                        <td>$215.04</td>
-                        <td class="change-positive">+1.58%</td>
+                        <td><strong>BBAI</strong></td>
+                        <td>BigBear.ai, Inc.</td>
+                        <td><span class="volume-bar">122.4M shares</span></td>
+                        <td>$6.90</td>
+                        <td class="change-positive">+1.77%</td>
                     </tr>
                     <tr>
                         <td>5</td>
-                        <td><strong>AAPL</strong></td>
-                        <td>Apple Inc.</td>
-                        <td><span class="volume-bar">103.1M shares</span></td>
-                        <td>$260.83</td>
-                        <td class="change-positive">+2.67%</td>
+                        <td><strong>DNN</strong></td>
+                        <td>Denison Mines Corp</td>
+                        <td><span class="volume-bar">119.1M shares</span></td>
+                        <td>$3.17</td>
+                        <td class="change-positive">+3.26%</td>
                     </tr>
                     <tr>
                         <td>6</td>
-                        <td><strong>INTC</strong></td>
-                        <td>Intel Corporation</td>
-                        <td><span class="volume-bar">96.3M shares</span></td>
-                        <td>$39.38</td>
-                        <td class="change-positive">+0.66%</td>
+                        <td><strong>F</strong></td>
+                        <td>Ford Motor Company</td>
+                        <td><span class="volume-bar">117.4M shares</span></td>
+                        <td>$13.24</td>
+                        <td class="change-positive">+0.84%</td>
                     </tr>
                     <tr>
                         <td>7</td>
-                        <td><strong>TSLA</strong></td>
-                        <td>Tesla, Inc.</td>
-                        <td><span class="volume-bar">91.7M shares</span></td>
-                        <td>$258.48</td>
-                        <td class="change-negative">-1.45%</td>
+                        <td><strong>INTC</strong></td>
+                        <td>Intel Corporation</td>
+                        <td><span class="volume-bar">106.4M shares</span></td>
+                        <td>$41.34</td>
+                        <td class="change-negative">-0.46%</td>
                     </tr>
                     <tr>
                         <td>8</td>
-                        <td><strong>SOFI</strong></td>
-                        <td>SoFi Technologies, Inc.</td>
-                        <td><span class="volume-bar">82.3M shares</span></td>
-                        <td>$31.14</td>
-                        <td class="change-positive">+3.33%</td>
+                        <td><strong>T</strong></td>
+                        <td>AT&T Inc.</td>
+                        <td><span class="volume-bar">102.2M shares</span></td>
+                        <td>$25.14</td>
+                        <td class="change-negative">-2.18%</td>
                     </tr>
                     <tr>
                         <td>9</td>
-                        <td><strong>BITF</strong></td>
-                        <td>Bitfarms Ltd.</td>
-                        <td><span class="volume-bar">80.4M shares</span></td>
-                        <td>$4.80</td>
-                        <td class="change-positive">+9.85%</td>
+                        <td><strong>FI</strong></td>
+                        <td>Fiserv, Inc.</td>
+                        <td><span class="volume-bar">100.9M shares</span></td>
+                        <td>$70.60</td>
+                        <td class="change-negative">-44.04%</td>
                     </tr>
                     <tr>
                         <td>10</td>
-                        <td><strong>RIVN</strong></td>
-                        <td>Rivian Automotive, Inc.</td>
-                        <td><span class="volume-bar">68.8M shares</span></td>
-                        <td>$13.87</td>
-                        <td class="change-positive">+3.82%</td>
+                        <td><strong>SOFI</strong></td>
+                        <td>SoFi Technologies, Inc.</td>
+                        <td><span class="volume-bar">94.4M shares</span></td>
+                        <td>$30.90</td>
+                        <td class="change-negative">-2.40%</td>
                     </tr>
                 </tbody>
             </table>
         </div>
         
         <div class="stocks-table">
-            <div class="table-title">💎 High Growth Opportunities <span class="growth-badge">4/4 Criteria Met</span> <span style="font-size: 0.9rem; color: #00ff88;">Strong Performers</span></div>
+            <div class="table-title">💎 High Growth Opportunities <span class="growth-badge">4/4 Criteria Met</span> <span style="font-size: 0.9rem; color: #00ff88;">Exceptional Growth</span></div>
             <table>
                 <thead>
                     <tr>
@@ -638,46 +714,37 @@
                         <td><strong>EOSE</strong></td>
                         <td>Eos Energy Enterprises, Inc.</td>
                         <td><span class="sector-pill">Industrials</span></td>
-                        <td>$18.28</td>
+                        <td>$14.37</td>
                         <td class="change-positive">1,597%</td>
                         <td class="change-positive">77%</td>
-                        <td class="change-positive">+7.56%</td>
+                        <td class="change-negative">-4.26%</td>
                     </tr>
                     <tr>
                         <td><strong>SMR</strong></td>
                         <td>NuScale Power Corporation</td>
                         <td><span class="sector-pill">Industrials</span></td>
-                        <td>$53.43</td>
+                        <td>$43.17</td>
                         <td class="change-positive">733%</td>
                         <td class="change-positive">61%</td>
-                        <td class="change-positive">+16.68%</td>
+                        <td class="change-positive">+2.49%</td>
                     </tr>
                     <tr>
                         <td><strong>SOUN</strong></td>
                         <td>SoundHound AI, Inc.</td>
                         <td><span class="sector-pill">Technology</span></td>
-                        <td>$21.40</td>
+                        <td>$18.15</td>
                         <td class="change-positive">217%</td>
                         <td class="change-positive">71%</td>
-                        <td class="change-positive">+2.59%</td>
+                        <td class="change-positive">+2.48%</td>
                     </tr>
                     <tr>
-                        <td><strong>ONDS</strong></td>
-                        <td>Ondas Holdings Inc.</td>
-                        <td><span class="sector-pill">Technology</span></td>
-                        <td>$9.88</td>
-                        <td class="change-positive">555%</td>
-                        <td class="change-positive">51%</td>
-                        <td class="change-negative">-8.65%</td>
-                    </tr>
-                    <tr>
-                        <td><strong>UAMY</strong></td>
-                        <td>United States Antimony Corp.</td>
-                        <td><span class="sector-pill">Basic Materials</span></td>
-                        <td>$15.22</td>
-                        <td class="change-positive">187%</td>
-                        <td class="change-positive">5,700%</td>
-                        <td class="change-positive">+4.82%</td>
+                        <td><strong>SW</strong></td>
+                        <td>Smurfit WestRock plc</td>
+                        <td><span class="sector-pill">Consumer Cyclical</span></td>
+                        <td>$37.84</td>
+                        <td class="change-positive">167%</td>
+                        <td class="change-positive">1,288%</td>
+                        <td class="change-negative">-12.18%</td>
                     </tr>
                 </tbody>
             </table>
@@ -690,10 +757,10 @@
         new Chart(sentCtx, {
             type: 'line',
             data: {
-                labels: ['Sept 10', 'Sept 29', 'Sept 30', 'Oct 7', 'Oct 10', 'Oct 13', 'Oct 15'],
+                labels: ['Sept 10', 'Sept 29', 'Sept 30', 'Oct 7', 'Oct 10', 'Oct 13', 'Oct 15', 'Oct 29'],
                 datasets: [{
                     label: 'Average Change %',
-                    data: [4.25, 3.13, 0.49, -0.22, -4.46, 10.19, 1.56],
+                    data: [4.25, 3.13, 0.49, -0.22, -4.46, 10.19, 1.56, -0.82],
                     borderColor: 'rgba(0, 255, 136, 1)',
                     backgroundColor: 'rgba(0, 255, 136, 0.1)',
                     borderWidth: 3,
@@ -701,7 +768,7 @@
                     fill: true
                 }, {
                     label: 'Gainers %',
-                    data: [72, 62, 44, 44, 16, 92, 64],
+                    data: [72, 62, 44, 44, 16, 92, 64, 54],
                     borderColor: 'rgba(0, 212, 255, 1)',
                     backgroundColor: 'rgba(0, 212, 255, 0.1)',
                     borderWidth: 2,
@@ -743,14 +810,14 @@
         
         // Volume leaders chart
         const volumeData = [
-            {symbol: 'NVDA', volume: 212.1, change: -0.10},
-            {symbol: 'PLUG', volume: 180.2, change: -4.94},
-            {symbol: 'RXRX', volume: 179.2, change: 15.28},
-            {symbol: 'AMD', volume: 110.3, change: 1.58},
-            {symbol: 'AAPL', volume: 103.1, change: 2.67},
-            {symbol: 'INTC', volume: 96.3, change: 0.66},
-            {symbol: 'TSLA', volume: 91.7, change: -1.45},
-            {symbol: 'SOFI', volume: 82.3, change: 3.33}
+            {symbol: 'NVDA', volume: 303.6, change: 2.99},
+            {symbol: 'NOK', volume: 178.8, change: -5.66},
+            {symbol: 'PLUG', volume: 130.3, change: -1.08},
+            {symbol: 'BBAI', volume: 122.4, change: 1.77},
+            {symbol: 'DNN', volume: 119.1, change: 3.26},
+            {symbol: 'F', volume: 117.4, change: 0.84},
+            {symbol: 'INTC', volume: 106.4, change: -0.46},
+            {symbol: 'T', volume: 102.2, change: -2.18}
         ];
         
         const volCtx = document.getElementById('volumeChart').getContext('2d');
